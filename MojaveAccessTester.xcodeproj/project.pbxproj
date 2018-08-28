@@ -11,6 +11,7 @@
 		48898BF521358C5400214890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48898BF421358C5400214890 /* Assets.xcassets */; };
 		48898BF821358C5400214890 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48898BF621358C5400214890 /* MainMenu.xib */; };
 		48898BFB21358C5400214890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BFA21358C5400214890 /* main.m */; };
+		48898C042135903600214890 /* MojaveAccessTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C032135903600214890 /* MojaveAccessTester.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		48898BF921358C5400214890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48898BFA21358C5400214890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48898BFC21358C5400214890 /* MojaveAccessTester.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MojaveAccessTester.entitlements; sourceTree = "<group>"; };
+		48898C022135903600214890 /* MojaveAccessTester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MojaveAccessTester.h; sourceTree = "<group>"; };
+		48898C032135903600214890 /* MojaveAccessTester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MojaveAccessTester.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				48898BF121358C4900214890 /* AppDelegate.h */,
+				48898C022135903600214890 /* MojaveAccessTester.h */,
+				48898C032135903600214890 /* MojaveAccessTester.m */,
 				48898BF221358C4900214890 /* AppDelegate.m */,
 				48898BF421358C5400214890 /* Assets.xcassets */,
 				48898BF621358C5400214890 /* MainMenu.xib */,
@@ -135,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48898BFB21358C5400214890 /* main.m in Sources */,
+				48898C042135903600214890 /* MojaveAccessTester.m in Sources */,
 				48898BF321358C4900214890 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,7 +191,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -243,7 +249,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -267,9 +273,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MojaveAccessTester/MojaveAccessTester.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4MAMECY9VS;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MojaveAccessTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -277,6 +283,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.MojaveAccessTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -285,9 +292,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MojaveAccessTester/MojaveAccessTester.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 4MAMECY9VS;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MojaveAccessTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -295,6 +302,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.MojaveAccessTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
