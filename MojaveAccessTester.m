@@ -2,7 +2,7 @@
 
 @implementation MojaveAccessTester
 
-+ (void)testAndTerminate {
++ (void)test {
     NSError* error = nil;
     NSData* data = nil;
     NSString* path = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Safari/Bookmarks.plist"];
@@ -28,6 +28,12 @@
         message = @"Unreported error";
     }
 
+    NSArray<NSString *> *args = [[NSProcessInfo processInfo] arguments];
+    NSString* executablePath = [args objectAtIndex:0];
+    message = [message stringByAppendingFormat:
+               @"\n\nPath of this Executable is:\n\n%@",
+               executablePath];
+
     CFOptionFlags response ;
     // The following returns whether it "cancelled OK".
     // I don't know what that means.  But I don't need it now, anyhow.
@@ -39,12 +45,10 @@
                                     NULL,
                                     (CFStringRef)@"Test Result",
                                     (CFStringRef)message,
-                                    (CFStringRef)@"Quit",
+                                    (CFStringRef)@"OK",
                                     NULL,  // 2nd button title
                                     NULL,  // 3rd button title
                                     &response);
-
-    exit(0);
 }
 
 

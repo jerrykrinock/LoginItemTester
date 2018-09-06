@@ -19,9 +19,27 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="MojaveAccessTester" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="Quit MojaveAccessTester" keyEquivalent="q" id="4sb-4s-VLi">
+                            <menuItem title="Run Agent and Add as Login Item" id="4sb-4s-VLi">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                    <action selector="loginAgentOn:" target="-1" id="TSN-G0-aMc"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Quit Agent and Remove as Login Item" id="yBE-oR-o7t">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="loginAgentOff:" target="-1" id="bmA-YT-TFy"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Test Access Now" id="i3J-pM-j12">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="testAccess:" target="-1" id="jHZ-We-S8n"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Quit MojaveAccessTester" keyEquivalent="q" id="bTL-6I-SuI">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="N0B-e8-3Pt"/>
                                 </connections>
                             </menuItem>
                         </items>

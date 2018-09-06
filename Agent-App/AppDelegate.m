@@ -9,7 +9,8 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [MojaveAccessTester testAndTerminate];
+    sleep(2);
+    [MojaveAccessTester test];
 }
 
 @end

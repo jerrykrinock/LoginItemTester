@@ -2,6 +2,6 @@
 
 @interface MojaveAccessTester : NSObject
 
-+ (void)testAndTerminate;
++ (void)test;
 
 @end
