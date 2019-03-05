@@ -24,6 +24,9 @@
                                     NULL) ;
 }
 
+/*!
+ @details  This method never runs, presumably because when the system gets a
+ command to disable the agent, it kills our process with a rude signal. */
 - (void)applicationWillTerminate:(NSNotification *)notification {
     CFUserNotificationDisplayAlert (
                                     0,  // no timeout

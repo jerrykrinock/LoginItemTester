@@ -9,6 +9,8 @@
 @implementation AppDelegate
 
 - (void)loginItemSwitchOn:(BOOL)on {
+    self.enDisAbleResult.stringValue = @"";
+
     NSString* agentID = @"com.sheepsystems.LoginItemTesterAgent";
     BOOL ok = SMLoginItemSetEnabled(
                                     (__bridge CFStringRef)agentID,
@@ -16,14 +18,10 @@
                                     );
 
     NSString* message = [NSString stringWithFormat:
-                         @"SMLoginItemSetEnabled() returned that switching %@ %@",
-                         on ? @"ON" : @"OFF",
-                         ok ? @"succeeded" : @"failed"];
-    NSAlert* alert = [NSAlert new];
-    alert.messageText = message;
-    alert.informativeText = agentID;
-    alert.alertStyle = ok ? NSAlertStyleInformational : NSAlertStyleCritical;
-    [alert runModal];
+                         @"SMLoginItemSetEnabled() returned %@\n%@",
+                         ok ? @"YES" : @"NO",
+                         [NSDate date]];
+    self.enDisAbleResult.stringValue = message;
 }
 
 - (IBAction)loginAgentOn:(id)sender {

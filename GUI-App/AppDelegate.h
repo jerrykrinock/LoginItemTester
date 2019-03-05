@@ -5,5 +5,7 @@
 - (IBAction)loginAgentOn:(id)sender;
 - (IBAction)loginAgentOff:(id)sender;
 
+@property (weak) IBOutlet NSTextField* enDisAbleResult;
+
 @end
 
