@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -10,34 +11,28 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="MojaveAccessTester" id="1Xt-HY-uBw">
+                <menuItem title="LoginitemTester" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="MojaveAccessTester" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="LoginitemTester" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="Run Agent and Add as Login Item" id="4sb-4s-VLi">
+                            <menuItem title="Start Login Item" id="4sb-4s-VLi">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="loginAgentOn:" target="-1" id="TSN-G0-aMc"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Quit Agent and Remove as Login Item" id="yBE-oR-o7t">
+                            <menuItem title="Stop Login Item" id="yBE-oR-o7t">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="loginAgentOff:" target="-1" id="bmA-YT-TFy"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Test Access Now" id="i3J-pM-j12">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="testAccess:" target="-1" id="jHZ-We-S8n"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Quit MojaveAccessTester" keyEquivalent="q" id="bTL-6I-SuI">
+                            <menuItem title="Quit LoginitemTester" keyEquivalent="q" id="bTL-6I-SuI">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="N0B-e8-3Pt"/>
                                 </connections>

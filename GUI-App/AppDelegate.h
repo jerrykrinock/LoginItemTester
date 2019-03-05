@@ -4,7 +4,6 @@
 
 - (IBAction)loginAgentOn:(id)sender;
 - (IBAction)loginAgentOff:(id)sender;
-- (IBAction)testAccess:(id)sender;
 
 @end
 

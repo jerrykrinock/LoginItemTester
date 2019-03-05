@@ -8,16 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		48898BF321358C4900214890 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BF221358C4900214890 /* AppDelegate.m */; };
-		48898BF521358C5400214890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48898BF421358C5400214890 /* Assets.xcassets */; };
 		48898BF821358C5400214890 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48898BF621358C5400214890 /* MainMenu.xib */; };
 		48898BFB21358C5400214890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BFA21358C5400214890 /* main.m */; };
-		48898C042135903600214890 /* MojaveAccessTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C032135903600214890 /* MojaveAccessTester.m */; };
 		48898C0D213597B900214890 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C0C213597B900214890 /* AppDelegate.m */; };
-		48898C0F213597BD00214890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48898C0E213597BD00214890 /* Assets.xcassets */; };
 		48898C12213597BD00214890 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48898C10213597BD00214890 /* MainMenu.xib */; };
 		48898C15213597BD00214890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C14213597BD00214890 /* main.m */; };
-		48898C1A21359D3500214890 /* MojaveAccessTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C032135903600214890 /* MojaveAccessTester.m */; };
-		48898C1C21359F2700214890 /* MojaveAccessTesterAgent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48898C09213597B800214890 /* MojaveAccessTesterAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		48898C1C21359F2700214890 /* LoginitemTesterAgent.app in Copy Agent */ = {isa = PBXBuildFile; fileRef = 48898C09213597B800214890 /* LoginitemTesterAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,37 +27,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		48898C1B21359EEF00214890 /* CopyFiles */ = {
+		48898C1B21359EEF00214890 /* Copy Agent */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				48898C1C21359F2700214890 /* MojaveAccessTesterAgent.app in CopyFiles */,
+				48898C1C21359F2700214890 /* LoginitemTesterAgent.app in Copy Agent */,
 			);
+			name = "Copy Agent";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		48898BEE21358C4900214890 /* MojaveAccessTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MojaveAccessTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48898BEE21358C4900214890 /* LoginitemTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginitemTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48898BF121358C4900214890 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48898BF221358C4900214890 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		48898BF421358C5400214890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48898BF721358C5400214890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		48898BF921358C5400214890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48898BFA21358C5400214890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		48898BFC21358C5400214890 /* MojaveAccessTester.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MojaveAccessTester.entitlements; sourceTree = "<group>"; };
-		48898C022135903600214890 /* MojaveAccessTester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MojaveAccessTester.h; sourceTree = "<group>"; };
-		48898C032135903600214890 /* MojaveAccessTester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MojaveAccessTester.m; sourceTree = "<group>"; };
-		48898C09213597B800214890 /* MojaveAccessTesterAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MojaveAccessTesterAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48898C09213597B800214890 /* LoginitemTesterAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginitemTesterAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48898C0B213597B900214890 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48898C0C213597B900214890 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		48898C0E213597BD00214890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48898C11213597BD00214890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		48898C13213597BD00214890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48898C14213597BD00214890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		48898C16213597BD00214890 /* MojaveAccessTesterAgent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MojaveAccessTesterAgent.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +76,6 @@
 		48898BE521358C4800214890 = {
 			isa = PBXGroup;
 			children = (
-				48898C022135903600214890 /* MojaveAccessTester.h */,
-				48898C032135903600214890 /* MojaveAccessTester.m */,
 				48898BF021358C4900214890 /* GUI-App */,
 				48898C0A213597B900214890 /* Agent-App */,
 				48898BEF21358C4900214890 /* Products */,
@@ -96,8 +85,8 @@
 		48898BEF21358C4900214890 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48898BEE21358C4900214890 /* MojaveAccessTester.app */,
-				48898C09213597B800214890 /* MojaveAccessTesterAgent.app */,
+				48898BEE21358C4900214890 /* LoginitemTester.app */,
+				48898C09213597B800214890 /* LoginitemTesterAgent.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,11 +96,9 @@
 			children = (
 				48898BF121358C4900214890 /* AppDelegate.h */,
 				48898BF221358C4900214890 /* AppDelegate.m */,
-				48898BF421358C5400214890 /* Assets.xcassets */,
 				48898BF621358C5400214890 /* MainMenu.xib */,
 				48898BF921358C5400214890 /* Info.plist */,
 				48898BFA21358C5400214890 /* main.m */,
-				48898BFC21358C5400214890 /* MojaveAccessTester.entitlements */,
 			);
 			path = "GUI-App";
 			sourceTree = "<group>";
@@ -121,11 +108,9 @@
 			children = (
 				48898C0B213597B900214890 /* AppDelegate.h */,
 				48898C0C213597B900214890 /* AppDelegate.m */,
-				48898C0E213597BD00214890 /* Assets.xcassets */,
 				48898C10213597BD00214890 /* MainMenu.xib */,
 				48898C13213597BD00214890 /* Info.plist */,
 				48898C14213597BD00214890 /* main.m */,
-				48898C16213597BD00214890 /* MojaveAccessTesterAgent.entitlements */,
 			);
 			path = "Agent-App";
 			sourceTree = "<group>";
@@ -140,7 +125,7 @@
 				48898BEA21358C4900214890 /* Sources */,
 				48898BEB21358C4900214890 /* Frameworks */,
 				48898BEC21358C4900214890 /* Resources */,
-				48898C1B21359EEF00214890 /* CopyFiles */,
+				48898C1B21359EEF00214890 /* Copy Agent */,
 			);
 			buildRules = (
 			);
@@ -149,7 +134,7 @@
 			);
 			name = "GUI App";
 			productName = MojaveAccessTester;
-			productReference = 48898BEE21358C4900214890 /* MojaveAccessTester.app */;
+			productReference = 48898BEE21358C4900214890 /* LoginitemTester.app */;
 			productType = "com.apple.product-type.application";
 		};
 		48898C08213597B800214890 /* Agent App */ = {
@@ -166,7 +151,7 @@
 			);
 			name = "Agent App";
 			productName = MojaveAccessTesterAgent;
-			productReference = 48898C09213597B800214890 /* MojaveAccessTesterAgent.app */;
+			productReference = 48898C09213597B800214890 /* LoginitemTesterAgent.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,10 +168,15 @@
 					};
 					48898C08213597B800214890 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = 48898BE921358C4800214890 /* Build configuration list for PBXProject "MojaveAccessTester" */;
+			buildConfigurationList = 48898BE921358C4800214890 /* Build configuration list for PBXProject "LoginitemTester" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -210,7 +200,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48898BF521358C5400214890 /* Assets.xcassets in Resources */,
 				48898BF821358C5400214890 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48898C0F213597BD00214890 /* Assets.xcassets in Resources */,
 				48898C12213597BD00214890 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48898BFB21358C5400214890 /* main.m in Sources */,
-				48898C042135903600214890 /* MojaveAccessTester.m in Sources */,
 				48898BF321358C4900214890 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48898C15213597BD00214890 /* main.m in Sources */,
-				48898C1A21359D3500214890 /* MojaveAccessTester.m in Sources */,
 				48898C0D213597B900214890 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,8 +384,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.MojaveAccessTester;
-				PRODUCT_NAME = MojaveAccessTester;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.LoginItemTester;
+				PRODUCT_NAME = LoginitemTester;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
@@ -416,8 +402,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.MojaveAccessTester;
-				PRODUCT_NAME = MojaveAccessTester;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.LoginItemTester;
+				PRODUCT_NAME = LoginitemTester;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
@@ -426,7 +412,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4MAMECY9VS;
@@ -435,8 +420,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.MojaveAccessTesterAgent;
-				PRODUCT_NAME = MojaveAccessTesterAgent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.LoginItemTesterAgent;
+				PRODUCT_NAME = LoginitemTesterAgent;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
@@ -445,7 +430,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -454,8 +438,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.MojaveAccessTesterAgent;
-				PRODUCT_NAME = MojaveAccessTesterAgent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.LoginItemTesterAgent;
+				PRODUCT_NAME = LoginitemTesterAgent;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
@@ -463,7 +447,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48898BE921358C4800214890 /* Build configuration list for PBXProject "MojaveAccessTester" */ = {
+		48898BE921358C4800214890 /* Build configuration list for PBXProject "LoginitemTester" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48898BFD21358C5400214890 /* Debug */,

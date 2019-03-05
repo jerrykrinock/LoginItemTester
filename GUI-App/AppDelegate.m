@@ -1,5 +1,4 @@
 #import "AppDelegate.h"
-#import "MojaveAccessTester.h"
 #import <ServiceManagement/ServiceManagement.h>
 
 @interface AppDelegate ()
@@ -10,31 +9,21 @@
 @implementation AppDelegate
 
 - (void)loginItemSwitchOn:(BOOL)on {
+    NSString* agentID = @"com.sheepsystems.LoginItemTesterAgent";
     BOOL ok = SMLoginItemSetEnabled(
-                                    (CFStringRef)@"com.sheepsystems.MojaveAccessTesterAgent",
+                                    (__bridge CFStringRef)agentID,
                                     on ? true : false
                                     );
 
     NSString* message = [NSString stringWithFormat:
-                         @"Switching login item to %hhd succeeded=%hhd",
-                         on,
-                         ok];
-    CFOptionFlags response ;
-    // The following returns whether it "cancelled OK".
-    // I don't know what that means.  But I don't need it now, anyhow.
-    CFUserNotificationDisplayAlert (
-                                    0,  // no timeout
-                                    0,
-                                    NULL,
-                                    NULL,
-                                    NULL,
-                                    (CFStringRef)@"Setting Login Item  Result",
-                                    (CFStringRef)message,
-                                    (CFStringRef)@"OK",
-                                    NULL,  // 2nd button title
-                                    NULL,  // 3rd button title
-                                    &response);
-
+                         @"SMLoginItemSetEnabled() returned that switching %@ %@",
+                         on ? @"ON" : @"OFF",
+                         ok ? @"succeeded" : @"failed"];
+    NSAlert* alert = [NSAlert new];
+    alert.messageText = message;
+    alert.informativeText = agentID;
+    alert.alertStyle = ok ? NSAlertStyleInformational : NSAlertStyleCritical;
+    [alert runModal];
 }
 
 - (IBAction)loginAgentOn:(id)sender {
@@ -43,10 +32,6 @@
 
 - (IBAction)loginAgentOff:(id)sender {
     [self loginItemSwitchOn:NO];
-}
-
-- (IBAction)testAccess:(id)sender {
-    [MojaveAccessTester test];
 }
 
 @end
