@@ -1,11 +1,11 @@
-#import "AppDelegate.h"
+#import "AgentAppDel.h"
 
-@interface AppDelegate ()
+@interface AgentAppDel ()
 
 @property (weak) IBOutlet NSWindow *window;
 @end
 
-@implementation AppDelegate
+@implementation AgentAppDel
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // The following returns whether it "cancelled OK".
@@ -26,7 +26,7 @@
 
 /*!
  @details  This method never runs, presumably because when the system gets a
- command to disable the agent, it kills our process with a rude signal. */
+ command to disable the agent, it kills its process with a rude signal. */
 - (void)applicationWillTerminate:(NSNotification *)notification {
     CFUserNotificationDisplayAlert (
                                     0,  // no timeout

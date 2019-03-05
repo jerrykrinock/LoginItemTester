@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48898BF321358C4900214890 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BF221358C4900214890 /* AppDelegate.m */; };
+		48898BF321358C4900214890 /* GUIAppDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BF221358C4900214890 /* GUIAppDel.m */; };
 		48898BF821358C5400214890 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48898BF621358C5400214890 /* MainMenu.xib */; };
-		48898BFB21358C5400214890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BFA21358C5400214890 /* main.m */; };
-		48898C0D213597B900214890 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C0C213597B900214890 /* AppDelegate.m */; };
-		48898C12213597BD00214890 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48898C10213597BD00214890 /* MainMenu.xib */; };
-		48898C15213597BD00214890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C14213597BD00214890 /* main.m */; };
+		48898BFB21358C5400214890 /* GUI-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BFA21358C5400214890 /* GUI-main.m */; };
+		48898C0D213597B900214890 /* AgentAppDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C0C213597B900214890 /* AgentAppDel.m */; };
+		48898C15213597BD00214890 /* Agent-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C14213597BD00214890 /* Agent-main.m */; };
 		48898C1C21359F2700214890 /* LoginitemTesterAgent.app in Copy Agent */ = {isa = PBXBuildFile; fileRef = 48898C09213597B800214890 /* LoginitemTesterAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		48A1C375222E707400BB444F /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C372222E707400BB444F /* Job.m */; };
+		48A1C376222E707400BB444F /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C372222E707400BB444F /* Job.m */; };
+		48A1C377222E707400BB444F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C374222E707400BB444F /* Constants.m */; };
+		48A1C378222E707400BB444F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C374222E707400BB444F /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,17 +45,21 @@
 
 /* Begin PBXFileReference section */
 		48898BEE21358C4900214890 /* LoginitemTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginitemTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		48898BF121358C4900214890 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		48898BF221358C4900214890 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		48898BF121358C4900214890 /* GUIAppDel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUIAppDel.h; sourceTree = "<group>"; };
+		48898BF221358C4900214890 /* GUIAppDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GUIAppDel.m; sourceTree = "<group>"; };
 		48898BF721358C5400214890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		48898BF921358C5400214890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48898BFA21358C5400214890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48898BF921358C5400214890 /* GUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GUI-Info.plist"; sourceTree = "<group>"; };
+		48898BFA21358C5400214890 /* GUI-main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GUI-main.m"; sourceTree = "<group>"; };
 		48898C09213597B800214890 /* LoginitemTesterAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginitemTesterAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		48898C0B213597B900214890 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		48898C0C213597B900214890 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		48898C11213597BD00214890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		48898C13213597BD00214890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48898C14213597BD00214890 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48898C0B213597B900214890 /* AgentAppDel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgentAppDel.h; sourceTree = "<group>"; };
+		48898C0C213597B900214890 /* AgentAppDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgentAppDel.m; sourceTree = "<group>"; };
+		48898C13213597BD00214890 /* Agent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Agent-Info.plist"; sourceTree = "<group>"; };
+		48898C14213597BD00214890 /* Agent-main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Agent-main.m"; sourceTree = "<group>"; };
+		48A1C370222E707400BB444F /* Job.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Job.h; sourceTree = "<group>"; };
+		48A1C371222E707400BB444F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		48A1C372222E707400BB444F /* Job.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Job.m; sourceTree = "<group>"; };
+		48A1C373222E707400BB444F /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worker.h; sourceTree = "<group>"; };
+		48A1C374222E707400BB444F /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +83,7 @@
 		48898BE521358C4800214890 = {
 			isa = PBXGroup;
 			children = (
+				48A1C36F222E705200BB444F /* Common */,
 				48898BF021358C4900214890 /* GUI-App */,
 				48898C0A213597B900214890 /* Agent-App */,
 				48898BEF21358C4900214890 /* Products */,
@@ -94,11 +102,11 @@
 		48898BF021358C4900214890 /* GUI-App */ = {
 			isa = PBXGroup;
 			children = (
-				48898BF121358C4900214890 /* AppDelegate.h */,
-				48898BF221358C4900214890 /* AppDelegate.m */,
+				48898BF121358C4900214890 /* GUIAppDel.h */,
+				48898BF221358C4900214890 /* GUIAppDel.m */,
 				48898BF621358C5400214890 /* MainMenu.xib */,
-				48898BF921358C5400214890 /* Info.plist */,
-				48898BFA21358C5400214890 /* main.m */,
+				48898BF921358C5400214890 /* GUI-Info.plist */,
+				48898BFA21358C5400214890 /* GUI-main.m */,
 			);
 			path = "GUI-App";
 			sourceTree = "<group>";
@@ -106,13 +114,24 @@
 		48898C0A213597B900214890 /* Agent-App */ = {
 			isa = PBXGroup;
 			children = (
-				48898C0B213597B900214890 /* AppDelegate.h */,
-				48898C0C213597B900214890 /* AppDelegate.m */,
-				48898C10213597BD00214890 /* MainMenu.xib */,
-				48898C13213597BD00214890 /* Info.plist */,
-				48898C14213597BD00214890 /* main.m */,
+				48898C0B213597B900214890 /* AgentAppDel.h */,
+				48898C0C213597B900214890 /* AgentAppDel.m */,
+				48898C13213597BD00214890 /* Agent-Info.plist */,
+				48898C14213597BD00214890 /* Agent-main.m */,
 			);
 			path = "Agent-App";
+			sourceTree = "<group>";
+		};
+		48A1C36F222E705200BB444F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				48A1C371222E707400BB444F /* Constants.h */,
+				48A1C374222E707400BB444F /* Constants.m */,
+				48A1C370222E707400BB444F /* Job.h */,
+				48A1C372222E707400BB444F /* Job.m */,
+				48A1C373222E707400BB444F /* Worker.h */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48898C12213597BD00214890 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48898BFB21358C5400214890 /* main.m in Sources */,
-				48898BF321358C4900214890 /* AppDelegate.m in Sources */,
+				48A1C375222E707400BB444F /* Job.m in Sources */,
+				48898BFB21358C5400214890 /* GUI-main.m in Sources */,
+				48898BF321358C4900214890 /* GUIAppDel.m in Sources */,
+				48A1C377222E707400BB444F /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,8 +248,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48898C15213597BD00214890 /* main.m in Sources */,
-				48898C0D213597B900214890 /* AppDelegate.m in Sources */,
+				48A1C376222E707400BB444F /* Job.m in Sources */,
+				48898C15213597BD00214890 /* Agent-main.m in Sources */,
+				48898C0D213597B900214890 /* AgentAppDel.m in Sources */,
+				48A1C378222E707400BB444F /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,14 +270,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				48898BF721358C5400214890 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		48898C10213597BD00214890 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48898C11213597BD00214890 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -379,7 +393,7 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4MAMECY9VS;
-				INFOPLIST_FILE = "GUI-App/Info.plist";
+				INFOPLIST_FILE = "GUI-App/GUI-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -397,7 +411,7 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "GUI-App/Info.plist";
+				INFOPLIST_FILE = "GUI-App/GUI-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -415,7 +429,7 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4MAMECY9VS;
-				INFOPLIST_FILE = "Agent-App/Info.plist";
+				INFOPLIST_FILE = "Agent-App/Agent-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -433,7 +447,7 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Agent-App/Info.plist";
+				INFOPLIST_FILE = "Agent-App/Agent-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
