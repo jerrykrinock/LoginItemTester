@@ -10,11 +10,16 @@
     [self.connection setRemoteObjectInterface: [NSXPCInterface interfaceWithProtocol: @protocol(Worker)]];
     [self.connection resume];
 
-    self.job = [self.connection remoteObjectProxyWithErrorHandler:^(NSError *err) {
+    /*SSYDBL*/ NSLog(@"Resumed %@", self.connection) ;
+    self.job = [self.connection remoteObjectProxyWithErrorHandler:^(NSError *error) {
         /* UI access must be on main thread. */
         dispatch_queue_t mainQueue = dispatch_get_main_queue() ;
         dispatch_sync(mainQueue, ^{
-            self.textOutField.stringValue = @"🙁 Too many characters";
+            self.textOutField.stringValue = [[NSString alloc] initWithFormat:
+                                             @"%@: Error %ld: %@",
+                                             [NSDate date],
+                                             (long)error.code,
+                                             error.localizedDescription];
         }) ;
     }];
 }

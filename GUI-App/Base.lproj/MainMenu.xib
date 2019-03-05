@@ -16,6 +16,9 @@
         <customObject id="Voe-Tx-rLC" customClass="GUIAppDel">
             <connections>
                 <outlet property="enDisAbleResult" destination="Pfb-ZK-NdU" id="6S4-Ke-lKf"/>
+                <outlet property="textInField" destination="coL-Zl-xYf" id="9X6-8A-KUA"/>
+                <outlet property="textOutField" destination="hbM-XP-rpx" id="5FK-hT-eZ7"/>
+                <outlet property="window" destination="LWq-MS-EMU" id="QSA-qH-AiF"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -39,41 +42,44 @@
         <window title="ServiceManagerLoginItemDemo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="LWq-MS-EMU" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="11" y="722" width="285" height="324"/>
+            <rect key="contentRect" x="11" y="722" width="285" height="345"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="CvP-Dx-u4g">
-                <rect key="frame" x="0.0" y="0.0" width="285" height="324"/>
+                <rect key="frame" x="0.0" y="0.0" width="285" height="345"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <box fixedFrame="YES" title="Get work from Agent via XPC" translatesAutoresizingMaskIntoConstraints="NO" id="GJV-bd-Veb">
-                        <rect key="frame" x="16" y="16" width="251" height="152"/>
+                        <rect key="frame" x="16" y="16" width="251" height="173"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView" id="Qkh-uF-pGJ">
-                            <rect key="frame" x="3" y="3" width="245" height="134"/>
+                            <rect key="frame" x="3" y="3" width="245" height="155"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coL-Zl-xYf">
-                                    <rect key="frame" x="15" y="78" width="220" height="22"/>
+                                    <rect key="frame" x="15" y="99" width="220" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="EQE-cY-cP2">
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="test5" drawsBackground="YES" id="EQE-cY-cP2">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X2v-vk-eIW" userLabel="Reverse Button">
-                                    <rect key="frame" x="81" y="42" width="89" height="32"/>
+                                    <rect key="frame" x="48" y="63" width="155" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="push" title="Reverse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hY1-Po-qby">
+                                    <buttonCell key="cell" type="push" title="Reverse that string" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hY1-Po-qby">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                         <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="doWork:" target="Voe-Tx-rLC" id="19F-ll-gJw"/>
+                                    </connections>
                                 </button>
                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMm-Qo-gJ4" userLabel="Instructions">
-                                    <rect key="frame" x="-1" y="108" width="246" height="17"/>
+                                    <rect key="frame" x="-1" y="129" width="246" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Enter phrase, up to 5 characters" id="1dE-kY-Boh">
                                         <font key="font" metaFont="system"/>
@@ -81,10 +87,10 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWD-xp-HwI">
-                                    <rect key="frame" x="13" y="20" width="224" height="17"/>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbM-XP-rpx" userLabel="Text Out Field">
+                                    <rect key="frame" x="13" y="9" width="224" height="53"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" id="TH2-gg-nA7">
+                                    <textFieldCell key="cell" selectable="YES" id="giI-Km-gt4">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -94,13 +100,13 @@ DQ
                         </view>
                     </box>
                     <box fixedFrame="YES" title="Agent (LoginItem) Process Control" translatesAutoresizingMaskIntoConstraints="NO" id="ZU7-5S-S7g">
-                        <rect key="frame" x="18" y="192" width="248" height="112"/>
+                        <rect key="frame" x="18" y="213" width="248" height="112"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView" id="bxQ-Xv-VPQ">
                             <rect key="frame" x="3" y="3" width="242" height="94"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dbm-yx-nFq" userLabel="Reverse Button">
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dbm-yx-nFq" userLabel="Disable Button">
                                     <rect key="frame" x="145" y="54" width="85" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="push" title="Disable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o3w-0a-lzz">
@@ -111,10 +117,10 @@ DQ
 </string>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="loginAgentOff:" target="Voe-Tx-rLC" id="7a4-iS-gSR"/>
+                                        <action selector="loginAgentOff:" target="Voe-Tx-rLC" id="Vvs-ih-T4N"/>
                                     </connections>
                                 </button>
-                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-I1-cht" userLabel="Reverse Button">
+                                <button identifier="Enable Button" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-I1-cht" userLabel="Enable Button">
                                     <rect key="frame" x="14" y="54" width="81" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="push" title="Enable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="u2A-kj-ltg">
@@ -125,7 +131,7 @@ DQ
 </string>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="loginAgentOn:" target="Voe-Tx-rLC" id="1sr-GS-CPc"/>
+                                        <action selector="loginAgentOn:" target="Voe-Tx-rLC" id="kAT-UR-Kug"/>
                                     </connections>
                                 </button>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-ZK-NdU">
@@ -142,7 +148,7 @@ DQ
                     </box>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="33.5" y="-127"/>
+            <point key="canvasLocation" x="33.5" y="-116.5"/>
         </window>
     </objects>
 </document>
