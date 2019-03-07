@@ -11,6 +11,8 @@
 @property (weak) IBOutlet NSButton* button;
 @property (weak) IBOutlet NSTextField* textInField;
 @property (weak) IBOutlet NSTextField* textOutField;
+@property (weak) IBOutlet NSTextField* processActivityTextField;
+@property (weak) IBOutlet NSLevelIndicator* blinker;
 @property (strong) NSXPCConnection* connection;
 @property (strong) id <Worker> job;
 @property (weak) IBOutlet NSTextField* enDisAbleResult;

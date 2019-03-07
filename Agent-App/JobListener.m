@@ -10,19 +10,18 @@
 
     [newConnection resume];
 
-    NSLog(@"Worker got request for connection") ;
     return YES;
 }
 
 - (void)doWorkOn:(NSString *)textIn
           thenDo:(void (^)(Job *))thenDo {
-    NSLog(@"Worker got work: %@", textIn) ;
 
+    // Simulate actual work
     [NSThread sleepForTimeInterval:0.3];
 
     NSString* answer;
-    if (textIn.length > 5) {
-        answer = @"🙁 Too many characters";
+    if ([textIn.lowercaseString isEqualToString:@"kill"]) {
+        exit(97);
     } else {
 
         NSMutableString* mutant = [NSMutableString new];
@@ -40,6 +39,11 @@
     Job *job = nil;
     job = [Job new];
     job.answer = [answer copy];
+    /* We hard code the agentVersion here.  Change it to verify that the
+     newest version of the agent is being launched by macOS.  Note that
+     this code (JobListener) is only built into the Agent-App, not the
+     GUI-App.  */
+    job.agentVersion = 1001;
     thenDo(job);
 }
 

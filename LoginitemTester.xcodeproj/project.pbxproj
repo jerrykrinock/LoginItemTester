@@ -12,7 +12,7 @@
 		48898BFB21358C5400214890 /* GUI-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BFA21358C5400214890 /* GUI-main.m */; };
 		48898C0D213597B900214890 /* AgentAppDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C0C213597B900214890 /* AgentAppDel.m */; };
 		48898C15213597BD00214890 /* Agent-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C14213597BD00214890 /* Agent-main.m */; };
-		48898C1C21359F2700214890 /* LoginitemTesterAgent.app in Copy Agent */ = {isa = PBXBuildFile; fileRef = 48898C09213597B800214890 /* LoginitemTesterAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		48898C1C21359F2700214890 /* LoginItemTesterAgent.app in Copy Agent */ = {isa = PBXBuildFile; fileRef = 48898C09213597B800214890 /* LoginItemTesterAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48A1C375222E707400BB444F /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C372222E707400BB444F /* Job.m */; };
 		48A1C376222E707400BB444F /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C372222E707400BB444F /* Job.m */; };
 		48A1C377222E707400BB444F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C374222E707400BB444F /* Constants.m */; };
@@ -38,7 +38,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				48898C1C21359F2700214890 /* LoginitemTesterAgent.app in Copy Agent */,
+				48898C1C21359F2700214890 /* LoginItemTesterAgent.app in Copy Agent */,
 			);
 			name = "Copy Agent";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,7 +52,7 @@
 		48898BF721358C5400214890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		48898BF921358C5400214890 /* GUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GUI-Info.plist"; sourceTree = "<group>"; };
 		48898BFA21358C5400214890 /* GUI-main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GUI-main.m"; sourceTree = "<group>"; };
-		48898C09213597B800214890 /* LoginitemTesterAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginitemTesterAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48898C09213597B800214890 /* LoginItemTesterAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginItemTesterAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48898C0B213597B900214890 /* AgentAppDel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgentAppDel.h; sourceTree = "<group>"; };
 		48898C0C213597B900214890 /* AgentAppDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgentAppDel.m; sourceTree = "<group>"; };
 		48898C13213597BD00214890 /* Agent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Agent-Info.plist"; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				48898BEE21358C4900214890 /* LoginitemTester.app */,
-				48898C09213597B800214890 /* LoginitemTesterAgent.app */,
+				48898C09213597B800214890 /* LoginItemTesterAgent.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +113,8 @@
 				48898BF621358C5400214890 /* MainMenu.xib */,
 				48898BF921358C5400214890 /* GUI-Info.plist */,
 				48898BFA21358C5400214890 /* GUI-main.m */,
+				48A1C37F222EE60100BB444F /* ProcessActivityChecker.h */,
+				48A1C380222EE60100BB444F /* ProcessActivityChecker.m */,
 			);
 			path = "GUI-App";
 			sourceTree = "<group>";
@@ -126,8 +128,6 @@
 				48898C14213597BD00214890 /* Agent-main.m */,
 				48A1C379222E7E5C00BB444F /* JobListener.h */,
 				48A1C37A222E7E5C00BB444F /* JobListener.m */,
-				48A1C37F222EE60100BB444F /* ProcessActivityChecker.h */,
-				48A1C380222EE60100BB444F /* ProcessActivityChecker.m */,
 			);
 			path = "Agent-App";
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 			);
 			name = "Agent App";
 			productName = MojaveAccessTesterAgent;
-			productReference = 48898C09213597B800214890 /* LoginitemTesterAgent.app */;
+			productReference = 48898C09213597B800214890 /* LoginItemTesterAgent.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -446,8 +446,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.LoginItemTesterAgent;
-				PRODUCT_NAME = LoginitemTesterAgent;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.$(PRODUCT_NAME)";
+				PRODUCT_NAME = LoginItemTesterAgent;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
@@ -464,8 +464,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.LoginItemTesterAgent;
-				PRODUCT_NAME = LoginitemTesterAgent;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.$(PRODUCT_NAME)";
+				PRODUCT_NAME = LoginItemTesterAgent;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
