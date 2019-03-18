@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4885211822403AA3006FA963 /* Agent-Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4885211722403AA3006FA963 /* Agent-Main.xib */; };
 		48898BF321358C4900214890 /* GUIAppDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BF221358C4900214890 /* GUIAppDel.m */; };
 		48898BF821358C5400214890 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48898BF621358C5400214890 /* MainMenu.xib */; };
 		48898BFB21358C5400214890 /* GUI-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898BFA21358C5400214890 /* GUI-main.m */; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4885211722403AA3006FA963 /* Agent-Main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Agent-Main.xib"; sourceTree = "<group>"; };
 		48898BEE21358C4900214890 /* LoginitemTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginitemTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48898BF121358C4900214890 /* GUIAppDel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUIAppDel.h; sourceTree = "<group>"; };
 		48898BF221358C4900214890 /* GUIAppDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GUIAppDel.m; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				48898C14213597BD00214890 /* Agent-main.m */,
 				48A1C379222E7E5C00BB444F /* JobListener.h */,
 				48A1C37A222E7E5C00BB444F /* JobListener.m */,
+				4885211722403AA3006FA963 /* Agent-Main.xib */,
 			);
 			path = "Agent-App";
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4885211822403AA3006FA963 /* Agent-Main.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
