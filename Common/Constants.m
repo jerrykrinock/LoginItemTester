@@ -1,6 +1,6 @@
 #import "Constants.h"
 
-NSString* constAgentID = @"com.sheepsystems.Login1";
+NSString* constAgentID = @"com.sheepsystems.com.sheepsystems.LoginItemTesterAgent";
 
 /* We hard code the agentVersion here.  Change it to verify that the
  newest version of the agent is being launched by macOS.  Note that

@@ -79,32 +79,35 @@
                                         error.domain,
                                         (long)error.code,
                                         error.localizedDescription];
-            /*SSYDBL*/ NSLog(@"Failed:\n%@", errorNarrative) ;
             self.textOutField.stringValue = errorNarrative;
         }) ;
     }];
     
-    /*SSYDBL*/ NSLog(@"Asking agent to send its its version");
+    NSString* textIn = [self.textInField stringValue];
     [self.job getVersionThenDo:^(NSInteger version) {
-        NSLog(@"Received from agent version %ld", (long)version);
+
+        dispatch_queue_t mainQueue = dispatch_get_main_queue() ;
+        dispatch_sync(mainQueue, ^{
+            self.textOutField.stringValue = @"Waiting for Agent…";
+        });
+        [self.job doWorkOn:textIn
+                    thenDo: ^(Job *job) {
+                        NSString* versionVerdict = (version == constAgentVersion) ? @"as expected" : @"WRONG!";
+                        /* UI access must be on main thread. */
+                        dispatch_queue_t mainQueue = dispatch_get_main_queue();
+                        dispatch_sync(mainQueue, ^{
+                            self.textOutField.stringValue = [NSString stringWithFormat:
+                                                             @"From Agent version %ld (%@):\nAnswer:\n   %ld characters\n   %@",
+                                                             (long)version,
+                                                             versionVerdict,
+                                                             (long)job.characterCount,
+                                                             job.answer];
+                        }) ;
+                    }
+         ];
+
     }];
     
-    self.textOutField.stringValue = @"Waiting for Worker…";
-    /*SSYDBL*/ NSLog(@"Sending actual work to agent");
-    [self.job doWorkOn:[self.textInField stringValue]
-                thenDo: ^(Job *job) {
-                    NSString* versionVerdict = (job.agentVersion == constAgentVersion) ? @"as expected" : @"WRONG!";
-                    /* UI access must be on main thread. */
-                    dispatch_queue_t mainQueue = dispatch_get_main_queue();
-                    dispatch_sync(mainQueue, ^{
-                        self.textOutField.stringValue = [NSString stringWithFormat:
-                                                         @"From Agent version %ld (%@)\n\nAnswer:\n%@",
-                                                         job.agentVersion,
-                                                         versionVerdict,
-                                                         job.answer];
-                    }) ;
-                }
-     ];
 }
 
 @end

@@ -16,7 +16,6 @@
     NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
     NSXPCListener *xpcListener = [[NSXPCListener alloc] initWithMachServiceName:bundleId];
     self.xpcListener = xpcListener;
-    /*SSYDBL*/ NSLog(@"Agent %ld did init svc %@", constAgentVersion, bundleId) ;
 
     JobListener* jobListener = [JobListener new];
     self.jobListener = jobListener;
@@ -25,7 +24,6 @@
     /* This method never returns.  It will wait for incoming connections using
      CFRunLoop or a dispatch queue, as appropriate. */
     [xpcListener resume];
-    /*SSYDBL*/ NSLog(@"Agent did resume") ;
 }
 
 /*!

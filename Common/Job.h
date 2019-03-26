@@ -4,6 +4,7 @@
 }
 
 @property (copy) NSString* answer;
-@property (assign) NSInteger agentVersion;
+@property (assign) NSInteger characterCount;
+@property (copy) NSDate* timestamp;
 
 @end

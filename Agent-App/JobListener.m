@@ -6,7 +6,6 @@
 
 - (BOOL)          listener:(NSXPCListener *)listener
  shouldAcceptNewConnection:(NSXPCConnection *)newConnection {
-    /*SSYDBL*/ NSLog(@"Agent is accepting connection.");
     NSXPCInterface* interface = [NSXPCInterface interfaceWithProtocol:@protocol(Worker)];
     newConnection.exportedInterface = interface;
     /* Next line is necessary because we pass a custom class (Job) via XPC.
@@ -56,7 +55,7 @@
     Job *job = nil;
     job = [Job new];
     job.answer = [answer copy];
-    job.agentVersion = constAgentVersion;
+    job.characterCount = answer.length;
     thenDo(job);
 }
 
