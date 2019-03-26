@@ -3,7 +3,9 @@
 
 @protocol Worker
 
+- (void)getVersionThenDo:(void (^)(NSInteger version))thenDo;
+
 - (void)doWorkOn:(NSString*)textIn
-          thenDo:(void (^)(Job *job))job;
+          thenDo:(void (^)(Job *job))thenDo;
 
 @end

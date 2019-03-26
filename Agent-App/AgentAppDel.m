@@ -3,23 +3,29 @@
 
 @interface AgentAppDel ()
 
-@property (weak) IBOutlet NSWindow *window;
+//@property (weak) IBOutlet NSWindow *window;
+@property (strong) NSXPCListener* xpcListener;
+@property (strong) JobListener* jobListener;
 @end
 
 @implementation AgentAppDel
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    /* An XPCService should use this singleton instance of serviceListener.
-     It is preconfigured to listen on the name advertised by this XPCService's
-     Info.plist. */
-    NSXPCListener *listener = [NSXPCListener serviceListener];
+    // LaunchServices automatically registers a mach service of the same
+    // name as our bundle identifier.
+    NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
+    NSXPCListener *xpcListener = [[NSXPCListener alloc] initWithMachServiceName:bundleId];
+    self.xpcListener = xpcListener;
+    /*SSYDBL*/ NSLog(@"Agent %ld did init svc %@", constAgentVersion, bundleId) ;
 
-    JobListener* delegate = [JobListener new];
-    listener.delegate = delegate;
+    JobListener* jobListener = [JobListener new];
+    self.jobListener = jobListener;
+    xpcListener.delegate = jobListener;
 
     /* This method never returns.  It will wait for incoming connections using
      CFRunLoop or a dispatch queue, as appropriate. */
-    [listener resume];
+    [xpcListener resume];
+    /*SSYDBL*/ NSLog(@"Agent did resume") ;
 }
 
 /*!

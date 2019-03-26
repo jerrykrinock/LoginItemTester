@@ -2,22 +2,22 @@
 
 @implementation Job
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-	self = [super init];
-	if (self) {
-		self.answer = [aDecoder decodeObjectOfClass:[NSString class] forKey:@"Job"];
-        self.agentVersion = [aDecoder decodeIntegerForKey:@"agentVersion"];
-	}
-	return self;
-}
-
 + (BOOL)supportsSecureCoding {
     return YES;
 }
 
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-	[aCoder encodeObject:self.answer forKey:@"Job"];
-    [aCoder encodeInteger:self.agentVersion forKey:@"agentVersion"];
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeObject:self.answer forKey:@"answer"];
+    [coder encodeInteger:self.agentVersion forKey:@"agentVersion"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	self = [super init];
+	if (self) {
+		_answer = [aDecoder decodeObjectOfClass:[NSString class] forKey:@"answer"];
+        _agentVersion = [aDecoder decodeIntegerForKey:@"agentVersion"];
+	}
+	return self;
 }
 
 @end

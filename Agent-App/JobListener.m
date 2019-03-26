@@ -1,22 +1,39 @@
 #import "JobListener.h"
 #import "Job.h"
+#import "Constants.h"
 
 @implementation JobListener
 
 - (BOOL)          listener:(NSXPCListener *)listener
  shouldAcceptNewConnection:(NSXPCConnection *)newConnection {
-    [newConnection setExportedInterface: [NSXPCInterface interfaceWithProtocol:@protocol(Worker)]];
-    [newConnection setExportedObject: self];
+    /*SSYDBL*/ NSLog(@"Agent is accepting connection.");
+    NSXPCInterface* interface = [NSXPCInterface interfaceWithProtocol:@protocol(Worker)];
+    newConnection.exportedInterface = interface;
+    /* Next line is necessary because we pass a custom class (Job) via XPC.
+     Note that, because ofReply=YES, the argumentIndex 0 is the position of
+     the Job object in the *reply* block, not the position in
+     the request selector -doWorkOn:thenDo: */
+    [interface setClasses:[NSSet setWithObjects: [NSArray class], [NSString class], [NSDate class], [Job class], nil]
+              forSelector:@selector(doWorkOn:thenDo:)
+            argumentIndex:0
+                  ofReply:YES];
+    newConnection.exportedInterface = interface;
+    newConnection.exportedObject = self;
 
     [newConnection resume];
 
+    /* Start processing incoming messages */
     return YES;
+}
+
+- (void)getVersionThenDo:(void (^)(NSInteger))thenDo {
+    thenDo(constAgentVersion);
 }
 
 - (void)doWorkOn:(NSString *)textIn
           thenDo:(void (^)(Job *))thenDo {
 
-    // Simulate actual work
+    // Pretend we are doing something difficult
     [NSThread sleepForTimeInterval:0.3];
 
     NSString* answer;
@@ -39,11 +56,7 @@
     Job *job = nil;
     job = [Job new];
     job.answer = [answer copy];
-    /* We hard code the agentVersion here.  Change it to verify that the
-     newest version of the agent is being launched by macOS.  Note that
-     this code (JobListener) is only built into the Agent-App, not the
-     GUI-App.  */
-    job.agentVersion = 1001;
+    job.agentVersion = constAgentVersion;
     thenDo(job);
 }
 

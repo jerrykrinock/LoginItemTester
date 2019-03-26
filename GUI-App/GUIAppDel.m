@@ -7,23 +7,6 @@
 @implementation GUIAppDel
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    self.connection = [[NSXPCConnection alloc] initWithServiceName: constAgentID];
-    [self.connection setRemoteObjectInterface: [NSXPCInterface interfaceWithProtocol: @protocol(Worker)]];
-    [self.connection resume];
-
-    self.job = [self.connection remoteObjectProxyWithErrorHandler:^(NSError *error) {
-        /* UI access must be on main thread. */
-        dispatch_queue_t mainQueue = dispatch_get_main_queue() ;
-        dispatch_sync(mainQueue, ^{
-            self.textOutField.stringValue = [[NSString alloc] initWithFormat:
-                                             @"%@:\n%@ %ld:\n%@",
-                                             [NSDate date],
-                                             error.domain,
-                                             (long)error.code,
-                                             error.localizedDescription];
-        }) ;
-    }];
-
     [self refreshActivityDisplay];
 }
 
@@ -80,18 +63,48 @@
 }
 
 - (IBAction)doWork:(id)sender {
+    self.connection = [[NSXPCConnection alloc] initWithMachServiceName:constAgentID
+                                                               options:0];
+    [self.connection setRemoteObjectInterface: [NSXPCInterface interfaceWithProtocol: @protocol(Worker)]];
+    [self.connection resume];
+
+    self.job = [self.connection remoteObjectProxyWithErrorHandler:^(NSError *error) {
+        /* UI access must be on main thread. */
+        dispatch_queue_t mainQueue = dispatch_get_main_queue() ;
+        dispatch_sync(mainQueue, ^{
+            NSString* errorNarrative = [[NSString alloc] initWithFormat:
+                                        @"Got error sending to:\n   %@\nTime: %@\n%@ Error %ld:\n%@",
+                                        constAgentID,
+                                        [NSDate date],
+                                        error.domain,
+                                        (long)error.code,
+                                        error.localizedDescription];
+            /*SSYDBL*/ NSLog(@"Failed:\n%@", errorNarrative) ;
+            self.textOutField.stringValue = errorNarrative;
+        }) ;
+    }];
+    
+    /*SSYDBL*/ NSLog(@"Asking agent to send its its version");
+    [self.job getVersionThenDo:^(NSInteger version) {
+        NSLog(@"Received from agent version %ld", (long)version);
+    }];
+    
     self.textOutField.stringValue = @"Waiting for Worker…";
+    /*SSYDBL*/ NSLog(@"Sending actual work to agent");
     [self.job doWorkOn:[self.textInField stringValue]
                 thenDo: ^(Job *job) {
+                    NSString* versionVerdict = (job.agentVersion == constAgentVersion) ? @"as expected" : @"WRONG!";
                     /* UI access must be on main thread. */
-                    dispatch_queue_t mainQueue = dispatch_get_main_queue() ;
+                    dispatch_queue_t mainQueue = dispatch_get_main_queue();
                     dispatch_sync(mainQueue, ^{
                         self.textOutField.stringValue = [NSString stringWithFormat:
-                                                         @"Answer from Agent version %ld:\n%@",
+                                                         @"From Agent version %ld (%@)\n\nAnswer:\n%@",
                                                          job.agentVersion,
+                                                         versionVerdict,
                                                          job.answer];
                     }) ;
-                }];
+                }
+     ];
 }
 
 @end
