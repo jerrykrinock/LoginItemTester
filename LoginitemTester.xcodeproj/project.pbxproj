@@ -20,10 +20,30 @@
 		48A1C378222E707400BB444F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C374222E707400BB444F /* Constants.m */; };
 		48A1C37B222E7E5C00BB444F /* AgentWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C37A222E7E5C00BB444F /* AgentWorker.m */; };
 		48A1C381222EE60100BB444F /* ProcessActivityChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C380222EE60100BB444F /* ProcessActivityChecker.m */; };
+		48C075122268526600A2C10B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48898BF621358C5400214890 /* MainMenu.xib */; };
+		48C075142268526600A2C10B /* LoginItemTesterAgent.app in Copy Agent */ = {isa = PBXBuildFile; fileRef = 48898C09213597B800214890 /* LoginItemTesterAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		48C075232268527400A2C10B /* Agent-Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4885211722403AA3006FA963 /* Agent-Main.xib */; };
+		48C0752B2268658200A2C10B /* AgentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C075292268658200A2C10B /* AgentWorker.swift */; };
+		48C0752C2268658200A2C10B /* AgentAppDel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0752A2268658200A2C10B /* AgentAppDel.swift */; };
+		48C07530226865AE00A2C10B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0752D226865AD00A2C10B /* Worker.swift */; };
+		48C07531226865AE00A2C10B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0752D226865AD00A2C10B /* Worker.swift */; };
+		48C07532226865AE00A2C10B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0752E226865AD00A2C10B /* Constants.swift */; };
+		48C07533226865AE00A2C10B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0752E226865AD00A2C10B /* Constants.swift */; };
+		48C07534226865AE00A2C10B /* AgentProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0752F226865AD00A2C10B /* AgentProxy.swift */; };
+		48C07535226865AE00A2C10B /* AgentProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0752F226865AD00A2C10B /* AgentProxy.swift */; };
+		48C07538226865CB00A2C10B /* GUIAppDel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C07536226865CA00A2C10B /* GUIAppDel.swift */; };
+		48C07539226865CB00A2C10B /* ProcessActivityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C07537226865CA00A2C10B /* ProcessActivityChecker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		48898C1D2135BDB800214890 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48898BE621358C4800214890 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48898C08213597B800214890;
+			remoteInfo = "Agent App";
+		};
+		48C075092268526600A2C10B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48898BE621358C4800214890 /* Project object */;
 			proxyType = 1;
@@ -40,6 +60,17 @@
 			dstSubfolderSpec = 1;
 			files = (
 				48898C1C21359F2700214890 /* LoginItemTesterAgent.app in Copy Agent */,
+			);
+			name = "Copy Agent";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48C075132268526600A2C10B /* Copy Agent */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				48C075142268526600A2C10B /* LoginItemTesterAgent.app in Copy Agent */,
 			);
 			name = "Copy Agent";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,9 +97,18 @@
 		48A1C374222E707400BB444F /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		48A1C379222E7E5C00BB444F /* AgentWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgentWorker.h; sourceTree = "<group>"; };
 		48A1C37A222E7E5C00BB444F /* AgentWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgentWorker.m; sourceTree = "<group>"; };
-		48A1C37F222EE60100BB444F /* ProcessActivityChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProcessActivityChecker.h; path = "GUI-App/ProcessActivityChecker.h"; sourceTree = SOURCE_ROOT; };
-		48A1C380222EE60100BB444F /* ProcessActivityChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProcessActivityChecker.m; path = "GUI-App/ProcessActivityChecker.m"; sourceTree = SOURCE_ROOT; };
+		48A1C37F222EE60100BB444F /* ProcessActivityChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProcessActivityChecker.h; path = "GUI-App/Objective-C/ProcessActivityChecker.h"; sourceTree = SOURCE_ROOT; };
+		48A1C380222EE60100BB444F /* ProcessActivityChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProcessActivityChecker.m; path = "GUI-App/Objective-C/ProcessActivityChecker.m"; sourceTree = SOURCE_ROOT; };
 		48A60157224D8CDE00ECD152 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; wrapsLines = 1; };
+		48C075182268526600A2C10B /* LoginItemTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginItemTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48C075272268527400A2C10B /* LoginItemTesterAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginItemTesterAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48C075292268658200A2C10B /* AgentWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentWorker.swift; sourceTree = "<group>"; };
+		48C0752A2268658200A2C10B /* AgentAppDel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentAppDel.swift; sourceTree = "<group>"; };
+		48C0752D226865AD00A2C10B /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		48C0752E226865AD00A2C10B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		48C0752F226865AD00A2C10B /* AgentProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentProxy.swift; sourceTree = "<group>"; };
+		48C07536226865CA00A2C10B /* GUIAppDel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GUIAppDel.swift; sourceTree = "<group>"; };
+		48C07537226865CA00A2C10B /* ProcessActivityChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessActivityChecker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +120,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48898C06213597B800214890 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48C075102268526600A2C10B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48C075212268527400A2C10B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -105,6 +159,8 @@
 			children = (
 				48898BEE21358C4900214890 /* LoginitemTester.app */,
 				48898C09213597B800214890 /* LoginItemTesterAgent.app */,
+				48C075182268526600A2C10B /* LoginItemTester.app */,
+				48C075272268527400A2C10B /* LoginItemTesterAgent.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,13 +168,10 @@
 		48898BF021358C4900214890 /* GUI-App */ = {
 			isa = PBXGroup;
 			children = (
-				48898BF121358C4900214890 /* GUIAppDel.h */,
-				48898BF221358C4900214890 /* GUIAppDel.m */,
+				48C075022268516300A2C10B /* Objective-C */,
+				48C07505226851DE00A2C10B /* Swift */,
 				48898BF621358C5400214890 /* MainMenu.xib */,
 				48898BF921358C5400214890 /* GUI-Info.plist */,
-				48898BFA21358C5400214890 /* GUI-main.m */,
-				48A1C37F222EE60100BB444F /* ProcessActivityChecker.h */,
-				48A1C380222EE60100BB444F /* ProcessActivityChecker.m */,
 			);
 			path = "GUI-App";
 			sourceTree = "<group>";
@@ -126,12 +179,9 @@
 		48898C0A213597B900214890 /* Agent-App */ = {
 			isa = PBXGroup;
 			children = (
-				48898C0B213597B900214890 /* AgentAppDel.h */,
-				48898C0C213597B900214890 /* AgentAppDel.m */,
+				48C075032268517A00A2C10B /* Objective-C */,
+				48C07506226851ED00A2C10B /* Swift */,
 				48898C13213597BD00214890 /* Agent-Info.plist */,
-				48898C14213597BD00214890 /* Agent-main.m */,
-				48A1C379222E7E5C00BB444F /* AgentWorker.h */,
-				48A1C37A222E7E5C00BB444F /* AgentWorker.m */,
 				4885211722403AA3006FA963 /* Agent-Main.xib */,
 			);
 			path = "Agent-App";
@@ -140,21 +190,82 @@
 		48A1C36F222E705200BB444F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				48C075012268514900A2C10B /* Objective-C */,
+				48C07504226851C600A2C10B /* Swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		48C075012268514900A2C10B /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
 				48A1C371222E707400BB444F /* Constants.h */,
 				48A1C374222E707400BB444F /* Constants.m */,
 				48A1C370222E707400BB444F /* AgentProxy.h */,
 				48A1C372222E707400BB444F /* AgentProxy.m */,
 				48A1C373222E707400BB444F /* Worker.h */,
 			);
-			path = Common;
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		48C075022268516300A2C10B /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				48898BF121358C4900214890 /* GUIAppDel.h */,
+				48898BF221358C4900214890 /* GUIAppDel.m */,
+				48898BFA21358C5400214890 /* GUI-main.m */,
+				48A1C37F222EE60100BB444F /* ProcessActivityChecker.h */,
+				48A1C380222EE60100BB444F /* ProcessActivityChecker.m */,
+			);
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		48C075032268517A00A2C10B /* Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				48898C0B213597B900214890 /* AgentAppDel.h */,
+				48898C0C213597B900214890 /* AgentAppDel.m */,
+				48898C14213597BD00214890 /* Agent-main.m */,
+				48A1C379222E7E5C00BB444F /* AgentWorker.h */,
+				48A1C37A222E7E5C00BB444F /* AgentWorker.m */,
+			);
+			path = "Objective-C";
+			sourceTree = "<group>";
+		};
+		48C07504226851C600A2C10B /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				48C0752F226865AD00A2C10B /* AgentProxy.swift */,
+				48C0752E226865AD00A2C10B /* Constants.swift */,
+				48C0752D226865AD00A2C10B /* Worker.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		48C07505226851DE00A2C10B /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				48C07536226865CA00A2C10B /* GUIAppDel.swift */,
+				48C07537226865CA00A2C10B /* ProcessActivityChecker.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		48C07506226851ED00A2C10B /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				48C0752A2268658200A2C10B /* AgentAppDel.swift */,
+				48C075292268658200A2C10B /* AgentWorker.swift */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		48898BED21358C4900214890 /* GUI App */ = {
+		48898BED21358C4900214890 /* GUI App - ObjC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48898BFF21358C5400214890 /* Build configuration list for PBXNativeTarget "GUI App" */;
+			buildConfigurationList = 48898BFF21358C5400214890 /* Build configuration list for PBXNativeTarget "GUI App - ObjC" */;
 			buildPhases = (
 				48898BEA21358C4900214890 /* Sources */,
 				48898BEB21358C4900214890 /* Frameworks */,
@@ -166,14 +277,14 @@
 			dependencies = (
 				48898C1E2135BDB800214890 /* PBXTargetDependency */,
 			);
-			name = "GUI App";
+			name = "GUI App - ObjC";
 			productName = MojaveAccessTester;
 			productReference = 48898BEE21358C4900214890 /* LoginitemTester.app */;
 			productType = "com.apple.product-type.application";
 		};
-		48898C08213597B800214890 /* Agent App */ = {
+		48898C08213597B800214890 /* Agent App - ObjC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48898C17213597BD00214890 /* Build configuration list for PBXNativeTarget "Agent App" */;
+			buildConfigurationList = 48898C17213597BD00214890 /* Build configuration list for PBXNativeTarget "Agent App - ObjC" */;
 			buildPhases = (
 				48898C05213597B800214890 /* Sources */,
 				48898C06213597B800214890 /* Frameworks */,
@@ -183,9 +294,45 @@
 			);
 			dependencies = (
 			);
-			name = "Agent App";
+			name = "Agent App - ObjC";
 			productName = MojaveAccessTesterAgent;
 			productReference = 48898C09213597B800214890 /* LoginItemTesterAgent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48C075072268526600A2C10B /* GUI App - Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48C075152268526600A2C10B /* Build configuration list for PBXNativeTarget "GUI App - Swift" */;
+			buildPhases = (
+				48C0750A2268526600A2C10B /* Sources */,
+				48C075102268526600A2C10B /* Frameworks */,
+				48C075112268526600A2C10B /* Resources */,
+				48C075132268526600A2C10B /* Copy Agent */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48C075082268526600A2C10B /* PBXTargetDependency */,
+			);
+			name = "GUI App - Swift";
+			productName = MojaveAccessTester;
+			productReference = 48C075182268526600A2C10B /* LoginItemTester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48C0751A2268527400A2C10B /* Agent App - Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48C075242268527400A2C10B /* Build configuration list for PBXNativeTarget "Agent App - Swift" */;
+			buildPhases = (
+				48C0751B2268527400A2C10B /* Sources */,
+				48C075212268527400A2C10B /* Frameworks */,
+				48C075222268527400A2C10B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Agent App - Swift";
+			productName = MojaveAccessTesterAgent;
+			productReference = 48C075272268527400A2C10B /* LoginItemTesterAgent.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -208,6 +355,12 @@
 							};
 						};
 					};
+					48C075072268526600A2C10B = {
+						LastSwiftMigration = 1020;
+					};
+					48C0751A2268527400A2C10B = {
+						LastSwiftMigration = 1020;
+					};
 				};
 			};
 			buildConfigurationList = 48898BE921358C4800214890 /* Build configuration list for PBXProject "LoginitemTester" */;
@@ -223,8 +376,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				48898BED21358C4900214890 /* GUI App */,
-				48898C08213597B800214890 /* Agent App */,
+				48898BED21358C4900214890 /* GUI App - ObjC */,
+				48898C08213597B800214890 /* Agent App - ObjC */,
+				48C075072268526600A2C10B /* GUI App - Swift */,
+				48C0751A2268527400A2C10B /* Agent App - Swift */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +398,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4885211822403AA3006FA963 /* Agent-Main.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48C075112268526600A2C10B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C075122268526600A2C10B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48C075222268527400A2C10B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C075232268527400A2C10B /* Agent-Main.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,13 +444,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48C0750A2268526600A2C10B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C07530226865AE00A2C10B /* Worker.swift in Sources */,
+				48C07538226865CB00A2C10B /* GUIAppDel.swift in Sources */,
+				48C07539226865CB00A2C10B /* ProcessActivityChecker.swift in Sources */,
+				48C07534226865AE00A2C10B /* AgentProxy.swift in Sources */,
+				48C07532226865AE00A2C10B /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48C0751B2268527400A2C10B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C0752B2268658200A2C10B /* AgentWorker.swift in Sources */,
+				48C07531226865AE00A2C10B /* Worker.swift in Sources */,
+				48C0752C2268658200A2C10B /* AgentAppDel.swift in Sources */,
+				48C07535226865AE00A2C10B /* AgentProxy.swift in Sources */,
+				48C07533226865AE00A2C10B /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		48898C1E2135BDB800214890 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 48898C08213597B800214890 /* Agent App */;
+			target = 48898C08213597B800214890 /* Agent App - ObjC */;
 			targetProxy = 48898C1D2135BDB800214890 /* PBXContainerItemProxy */;
+		};
+		48C075082268526600A2C10B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48898C08213597B800214890 /* Agent App - ObjC */;
+			targetProxy = 48C075092268526600A2C10B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -478,6 +678,90 @@
 			};
 			name = Release;
 		};
+		48C075162268526600A2C10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4MAMECY9VS;
+				INFOPLIST_FILE = "GUI-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.$(PRODUCT_NAME)";
+				PRODUCT_NAME = LoginItemTester;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		48C075172268526600A2C10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4MAMECY9VS;
+				INFOPLIST_FILE = "GUI-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.$(PRODUCT_NAME)";
+				PRODUCT_NAME = LoginItemTester;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		48C075252268527400A2C10B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4MAMECY9VS;
+				INFOPLIST_FILE = "Agent-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.$(PRODUCT_NAME)";
+				PRODUCT_NAME = LoginItemTesterAgent;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		48C075262268527400A2C10B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4MAMECY9VS;
+				INFOPLIST_FILE = "Agent-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.$(PRODUCT_NAME)";
+				PRODUCT_NAME = LoginItemTesterAgent;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -490,7 +774,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48898BFF21358C5400214890 /* Build configuration list for PBXNativeTarget "GUI App" */ = {
+		48898BFF21358C5400214890 /* Build configuration list for PBXNativeTarget "GUI App - ObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48898C0021358C5400214890 /* Debug */,
@@ -499,11 +783,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48898C17213597BD00214890 /* Build configuration list for PBXNativeTarget "Agent App" */ = {
+		48898C17213597BD00214890 /* Build configuration list for PBXNativeTarget "Agent App - ObjC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48898C18213597BD00214890 /* Debug */,
 				48898C19213597BD00214890 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48C075152268526600A2C10B /* Build configuration list for PBXNativeTarget "GUI App - Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48C075162268526600A2C10B /* Debug */,
+				48C075172268526600A2C10B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48C075242268527400A2C10B /* Build configuration list for PBXNativeTarget "Agent App - Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48C075252268527400A2C10B /* Debug */,
+				48C075262268527400A2C10B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
