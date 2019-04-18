@@ -3,7 +3,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /*!
- @details  This class is for the demo only.  It has nothing to do with
+ @details  This class is an artifact of the demo only.  It is the thing which
+ finds whether or not the agent process is running.  It has nothing to do with
  Service Manager Login Items or XPC.  If your purpose is to learn about
  Service Manager Login Items or XPC, ignore this class.
  */
@@ -14,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  is process identifier (pid); otherwise returns 0
  */
 
-+ (pid_t)pidOfMyRunningExecutableName:(NSString*)executableName;
++ (pid_t)pidOfMyRunningProcessWithCommandName:(NSString*)executableName;
 
 @end
 

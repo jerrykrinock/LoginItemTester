@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 
-@interface Job : NSObject <NSSecureCoding> {
+@interface AgentProxy : NSObject <NSSecureCoding> {
 }
 
-@property (copy) NSString* answer;
+@property (copy) NSString* text;
 @property (assign) NSInteger characterCount;
 @property (copy) NSDate* timestamp;
 

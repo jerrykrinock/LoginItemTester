@@ -2,6 +2,6 @@
 #import "Constants.h"
 #import "Worker.h"
 
-@interface JobListener : NSObject <NSXPCListenerDelegate, Worker>
+@interface AgentWorker : NSObject <NSXPCListenerDelegate, Worker>
 
 @end

@@ -2,6 +2,5 @@
 
 @interface AgentAppDel : NSObject <NSApplicationDelegate>
 
-
 @end
 

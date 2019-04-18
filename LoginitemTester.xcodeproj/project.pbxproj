@@ -14,11 +14,11 @@
 		48898C0D213597B900214890 /* AgentAppDel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C0C213597B900214890 /* AgentAppDel.m */; };
 		48898C15213597BD00214890 /* Agent-main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48898C14213597BD00214890 /* Agent-main.m */; };
 		48898C1C21359F2700214890 /* LoginItemTesterAgent.app in Copy Agent */ = {isa = PBXBuildFile; fileRef = 48898C09213597B800214890 /* LoginItemTesterAgent.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		48A1C375222E707400BB444F /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C372222E707400BB444F /* Job.m */; };
-		48A1C376222E707400BB444F /* Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C372222E707400BB444F /* Job.m */; };
+		48A1C375222E707400BB444F /* AgentProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C372222E707400BB444F /* AgentProxy.m */; };
+		48A1C376222E707400BB444F /* AgentProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C372222E707400BB444F /* AgentProxy.m */; };
 		48A1C377222E707400BB444F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C374222E707400BB444F /* Constants.m */; };
 		48A1C378222E707400BB444F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C374222E707400BB444F /* Constants.m */; };
-		48A1C37B222E7E5C00BB444F /* JobListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C37A222E7E5C00BB444F /* JobListener.m */; };
+		48A1C37B222E7E5C00BB444F /* AgentWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C37A222E7E5C00BB444F /* AgentWorker.m */; };
 		48A1C381222EE60100BB444F /* ProcessActivityChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A1C380222EE60100BB444F /* ProcessActivityChecker.m */; };
 /* End PBXBuildFile section */
 
@@ -59,15 +59,16 @@
 		48898C0C213597B900214890 /* AgentAppDel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgentAppDel.m; sourceTree = "<group>"; };
 		48898C13213597BD00214890 /* Agent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Agent-Info.plist"; sourceTree = "<group>"; };
 		48898C14213597BD00214890 /* Agent-main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Agent-main.m"; sourceTree = "<group>"; };
-		48A1C370222E707400BB444F /* Job.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Job.h; sourceTree = "<group>"; };
+		48A1C370222E707400BB444F /* AgentProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgentProxy.h; sourceTree = "<group>"; };
 		48A1C371222E707400BB444F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		48A1C372222E707400BB444F /* Job.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Job.m; sourceTree = "<group>"; };
+		48A1C372222E707400BB444F /* AgentProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgentProxy.m; sourceTree = "<group>"; };
 		48A1C373222E707400BB444F /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Worker.h; sourceTree = "<group>"; };
 		48A1C374222E707400BB444F /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		48A1C379222E7E5C00BB444F /* JobListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobListener.h; sourceTree = "<group>"; };
-		48A1C37A222E7E5C00BB444F /* JobListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobListener.m; sourceTree = "<group>"; };
+		48A1C379222E7E5C00BB444F /* AgentWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgentWorker.h; sourceTree = "<group>"; };
+		48A1C37A222E7E5C00BB444F /* AgentWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgentWorker.m; sourceTree = "<group>"; };
 		48A1C37F222EE60100BB444F /* ProcessActivityChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProcessActivityChecker.h; path = "GUI-App/ProcessActivityChecker.h"; sourceTree = SOURCE_ROOT; };
 		48A1C380222EE60100BB444F /* ProcessActivityChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProcessActivityChecker.m; path = "GUI-App/ProcessActivityChecker.m"; sourceTree = SOURCE_ROOT; };
+		48A60157224D8CDE00ECD152 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; wrapsLines = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +92,7 @@
 		48898BE521358C4800214890 = {
 			isa = PBXGroup;
 			children = (
+				48A60157224D8CDE00ECD152 /* README.md */,
 				48A1C36F222E705200BB444F /* Common */,
 				48898BF021358C4900214890 /* GUI-App */,
 				48898C0A213597B900214890 /* Agent-App */,
@@ -128,8 +130,8 @@
 				48898C0C213597B900214890 /* AgentAppDel.m */,
 				48898C13213597BD00214890 /* Agent-Info.plist */,
 				48898C14213597BD00214890 /* Agent-main.m */,
-				48A1C379222E7E5C00BB444F /* JobListener.h */,
-				48A1C37A222E7E5C00BB444F /* JobListener.m */,
+				48A1C379222E7E5C00BB444F /* AgentWorker.h */,
+				48A1C37A222E7E5C00BB444F /* AgentWorker.m */,
 				4885211722403AA3006FA963 /* Agent-Main.xib */,
 			);
 			path = "Agent-App";
@@ -140,8 +142,8 @@
 			children = (
 				48A1C371222E707400BB444F /* Constants.h */,
 				48A1C374222E707400BB444F /* Constants.m */,
-				48A1C370222E707400BB444F /* Job.h */,
-				48A1C372222E707400BB444F /* Job.m */,
+				48A1C370222E707400BB444F /* AgentProxy.h */,
+				48A1C372222E707400BB444F /* AgentProxy.m */,
 				48A1C373222E707400BB444F /* Worker.h */,
 			);
 			path = Common;
@@ -251,7 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A1C375222E707400BB444F /* Job.m in Sources */,
+				48A1C375222E707400BB444F /* AgentProxy.m in Sources */,
 				48A1C381222EE60100BB444F /* ProcessActivityChecker.m in Sources */,
 				48898BFB21358C5400214890 /* GUI-main.m in Sources */,
 				48898BF321358C4900214890 /* GUIAppDel.m in Sources */,
@@ -263,9 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A1C376222E707400BB444F /* Job.m in Sources */,
+				48A1C376222E707400BB444F /* AgentProxy.m in Sources */,
 				48898C15213597BD00214890 /* Agent-main.m in Sources */,
-				48A1C37B222E7E5C00BB444F /* JobListener.m in Sources */,
+				48A1C37B222E7E5C00BB444F /* AgentWorker.m in Sources */,
 				48898C0D213597B900214890 /* AgentAppDel.m in Sources */,
 				48A1C378222E707400BB444F /* Constants.m in Sources */,
 			);
@@ -414,7 +416,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.LoginItemTester;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.$(PRODUCT_NAME)";
 				PRODUCT_NAME = LoginitemTester;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -432,7 +434,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sheepsystems.LoginItemTester;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sheepsystems.$(PRODUCT_NAME)";
 				PRODUCT_NAME = LoginitemTester;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

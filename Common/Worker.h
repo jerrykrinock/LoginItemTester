@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
-#import "Job.h"
+#import "AgentProxy.h"
 
 @protocol Worker
 
 - (void)getVersionThenDo:(void (^)(NSInteger version))thenDo;
 
 - (void)doWorkOn:(NSString*)textIn
-          thenDo:(void (^)(Job *job))thenDo;
+          thenDo:(void (^)(AgentProxy *agentProxy))thenDo;
 
 @end

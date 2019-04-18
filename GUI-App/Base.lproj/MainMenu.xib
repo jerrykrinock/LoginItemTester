@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +15,8 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="GUIAppDel">
             <connections>
-                <outlet property="blinker" destination="Ju3-Kh-BN4" id="059-VY-LB4"/>
+                <outlet property="blinker" destination="3yR-9K-bCX" id="VZY-82-VIE"/>
+                <outlet property="connectionResult" destination="ci5-Ko-V9o" id="Xqu-lH-nGk"/>
                 <outlet property="enDisAbleResult" destination="Pfb-ZK-NdU" id="6S4-Ke-lKf"/>
                 <outlet property="processActivityTextField" destination="XJH-sQ-efm" id="NYr-pi-wlG"/>
                 <outlet property="textInField" destination="coL-Zl-xYf" id="9X6-8A-KUA"/>
@@ -41,24 +42,24 @@
             </items>
             <point key="canvasLocation" x="-28" y="-389"/>
         </menu>
-        <window title="LoginItemTester (Service Manager)" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" animationBehavior="default" id="LWq-MS-EMU" userLabel="Window">
+        <window title="Service Management Login Item Tester" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" animationBehavior="default" id="LWq-MS-EMU" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="11" y="722" width="400" height="513"/>
+            <rect key="contentRect" x="11" y="722" width="400" height="556"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="CvP-Dx-u4g">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="513"/>
+                <rect key="frame" x="0.0" y="0.0" width="400" height="556"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <box title="Agent (LoginItem) Process Control" id="ZU7-5S-S7g">
-                        <rect key="frame" x="18" y="363" width="366" height="130"/>
+                        <rect key="frame" x="18" y="460" width="366" height="80"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView" id="bxQ-Xv-VPQ">
-                            <rect key="frame" x="3" y="3" width="360" height="112"/>
+                            <rect key="frame" x="3" y="3" width="360" height="62"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Pfb-ZK-NdU">
-                                    <rect key="frame" x="11" y="7" width="331" height="64"/>
+                                    <rect key="frame" x="11" y="9" width="331" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="No results yet" id="LFz-3Z-7WS">
                                         <font key="font" metaFont="smallSystem"/>
@@ -67,7 +68,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <button identifier="Enable Button" verticalHuggingPriority="750" id="ksh-I1-cht" userLabel="Enable Button">
-                                    <rect key="frame" x="74" y="72" width="81" height="32"/>
+                                    <rect key="frame" x="74" y="22" width="81" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="push" title="Enable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="u2A-kj-ltg">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -81,7 +82,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" id="Dbm-yx-nFq" userLabel="Disable Button">
-                                    <rect key="frame" x="199" y="72" width="85" height="32"/>
+                                    <rect key="frame" x="199" y="22" width="85" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="push" title="Disable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o3w-0a-lzz">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -97,27 +98,50 @@ DQ
                             </subviews>
                         </view>
                     </box>
-                    <box title="Agent process activity status (checked every 1 sec.)" id="rmG-A0-rLX">
-                        <rect key="frame" x="18" y="253" width="366" height="96"/>
+                    <box title="XPC Control" id="bPj-QB-USO">
+                        <rect key="frame" x="18" y="252" width="366" height="113"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <view key="contentView" id="mOB-0d-M6y">
-                            <rect key="frame" x="3" y="3" width="360" height="78"/>
+                        <view key="contentView" id="C5l-5u-heA">
+                            <rect key="frame" x="3" y="3" width="360" height="95"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="XJH-sQ-efm" userLabel="Text Out Field">
-                                    <rect key="frame" x="32" y="14" width="310" height="55"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <textFieldCell key="cell" selectable="YES" title="Unknown status" id="otc-2A-obn">
+                                <button identifier="Enable Button" verticalHuggingPriority="750" id="VLR-1t-uAY" userLabel="Enable Button">
+                                    <rect key="frame" x="26" y="55" width="143" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="push" title="Start Connection" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jKi-eL-aep">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
+                                        <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="startConnection:" target="Voe-Tx-rLC" id="QkV-3d-OMU"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" id="xbI-sY-KNE" userLabel="Disable Button">
+                                    <rect key="frame" x="185" y="55" width="137" height="32"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="push" title="End Connection" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Wh-PZ-5Vw">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                        <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="endConnection:" target="Voe-Tx-rLC" id="fxx-oZ-hII"/>
+                                    </connections>
+                                </button>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ci5-Ko-V9o">
+                                    <rect key="frame" x="11" y="8" width="331" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" alignment="center" title="No results yet" id="3BC-ny-oau">
+                                        <font key="font" metaFont="smallSystem"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <levelIndicator verticalHuggingPriority="750" id="Ju3-Kh-BN4">
-                                    <rect key="frame" x="12" y="49" width="16" height="18"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="1" warningValue="1" criticalValue="1" id="Wfz-GE-6tj"/>
-                                </levelIndicator>
                             </subviews>
                         </view>
                     </box>
@@ -174,9 +198,36 @@ DQ
                             </subviews>
                         </view>
                     </box>
+                    <box title="Agent process activity status (checked every 1 sec.)" id="rmG-A0-rLX">
+                        <rect key="frame" x="18" y="375" width="366" height="74"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <view key="contentView" id="mOB-0d-M6y">
+                            <rect key="frame" x="3" y="3" width="360" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="XJH-sQ-efm" userLabel="Text Out Field">
+                                    <rect key="frame" x="32" y="11" width="310" height="37"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <textFieldCell key="cell" selectable="YES" title="Unknown status" id="otc-2A-obn">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="3yR-9K-bCX">
+                                    <rect key="frame" x="6" y="23" width="25" height="25"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="na9-gi-i55">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                </button>
+                            </subviews>
+                        </view>
+                    </box>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="73" y="-32.5"/>
+            <point key="canvasLocation" x="73" y="-11"/>
         </window>
     </objects>
 </document>

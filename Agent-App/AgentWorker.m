@@ -1,27 +1,27 @@
-#import "JobListener.h"
-#import "Job.h"
+#import "AgentWorker.h"
+#import "AgentProxy.h"
 #import "Constants.h"
 
-@implementation JobListener
+@implementation AgentWorker
 
 - (BOOL)          listener:(NSXPCListener *)listener
  shouldAcceptNewConnection:(NSXPCConnection *)newConnection {
     NSXPCInterface* interface = [NSXPCInterface interfaceWithProtocol:@protocol(Worker)];
     newConnection.exportedInterface = interface;
-    /* Next line is necessary because we pass a custom class (Job) via XPC.
+    /* Next line is necessary because we pass a custom class (AgentProxy) via XPC.
      Note that, because ofReply=YES, the argumentIndex 0 is the position of
-     the Job object in the *reply* block, not the position in
+     the AgentProxy object in the *reply* block, not the position in
      the request selector -doWorkOn:thenDo: */
-    [interface setClasses:[NSSet setWithObjects: [NSArray class], [NSString class], [NSDate class], [Job class], nil]
+    [interface setClasses:[NSSet setWithObjects:[AgentProxy class], nil]
               forSelector:@selector(doWorkOn:thenDo:)
             argumentIndex:0
                   ofReply:YES];
     newConnection.exportedInterface = interface;
     newConnection.exportedObject = self;
 
+    /* Begin accepting incoming messages */
     [newConnection resume];
 
-    /* Start processing incoming messages */
     return YES;
 }
 
@@ -30,10 +30,10 @@
 }
 
 - (void)doWorkOn:(NSString *)textIn
-          thenDo:(void (^)(Job *))thenDo {
+          thenDo:(void (^)(AgentProxy *))thenDo {
 
-    // Pretend we are doing something difficult
-    [NSThread sleepForTimeInterval:0.3];
+    /* Pretend we are doing something substantial. */
+    [NSThread sleepForTimeInterval:0.1];
 
     NSString* answer;
     if ([textIn.lowercaseString isEqualToString:@"kill"]) {
@@ -52,11 +52,11 @@
 
     }
 
-    Job *job = nil;
-    job = [Job new];
-    job.answer = [answer copy];
-    job.characterCount = answer.length;
-    thenDo(job);
+    AgentProxy *agentProxy = [AgentProxy new];
+    agentProxy.text = [answer copy];
+    agentProxy.characterCount = answer.length;
+    agentProxy.timestamp = [NSDate date];
+    thenDo(agentProxy);
 }
 
 @end

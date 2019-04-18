@@ -1,13 +1,13 @@
-#import "Job.h"
+#import "AgentProxy.h"
 
-@implementation Job
+@implementation AgentProxy
 
 + (BOOL)supportsSecureCoding {
     return YES;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
-    [coder encodeObject:self.answer forKey:@"answer"];
+    [coder encodeObject:self.text forKey:@"answer"];
     [coder encodeInteger:self.characterCount forKey:@"characterCount"];
     [coder encodeObject:self.timestamp forKey:@"timestamp"];
 }
@@ -15,7 +15,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	self = [super init];
 	if (self) {
-        _answer = [aDecoder decodeObjectOfClass:[NSString class]
+        _text = [aDecoder decodeObjectOfClass:[NSString class]
                                          forKey:@"answer"];
         _characterCount = [aDecoder decodeIntegerForKey:@"characterCount"];
         _timestamp = [aDecoder decodeObjectOfClass:[NSDate class]

@@ -6,17 +6,29 @@ NSString* const ProcessActivityCheckerKeyUser = @"user" ;
 NSString* const ProcessActivityCheckerKeyEtime = @"etime" ;
 NSString* const ProcessActivityCheckerKeyExecutable = @"executable" ;
 
+/*!
+ @details  This class is an artifact of the demo only.  It is the thing which
+ finds whether or not the agent process is running.  It has nothing to do with
+ Service Manager Login Items or XPC.  If your purpose is to learn about
+ Service Manager Login Items or XPC, ignore this class.
+ */
 @implementation ProcessActivityChecker
 
 + (NSArray*)pidsExecutablesFull:(BOOL)fullExecutablePath {
-    // Run unix task "ps" and get results as an array, with each element containing process command and user
-    // The invocation to be constructed is: ps -xa[c]awww -o pid -o user -o command
-    // -ww is required for long command path strings!!
+    /* Run unix task "ps" and get results as an array, with each element
+     containing process command and user.  The call to be constructed is:
+     •   ps -xa[c]awww -o pid -o user -o command
+     The -ww is required for long command path strings. */
     NSData* stdoutData ;
     NSString* options = fullExecutablePath ? @"-xaww" : @"-xacww" ;
     NSString* command = @"/bin/ps";
-    NSArray* args = [[NSArray alloc] initWithObjects:options, @"-o", @"pid=", @"-o", @"etime=", @"-o", @"user=", @"-o", @"comm=", nil] ;
-    // In args, the "=" say to omit the column headers
+    NSArray* args = [[NSArray alloc] initWithObjects:
+                     options,
+                     @"-o", @"pid=",
+                     @"-o", @"etime=",
+                     @"-o", @"user=",
+                     @"-o", @"comm=", nil] ;
+    /* In args, the "=" say to omit the column headers */
 
     NSTask* task;
     NSPipe* pipeStdout = nil ;
@@ -38,7 +50,10 @@ NSString* const ProcessActivityCheckerKeyExecutable = @"executable" ;
     if (stdoutData) {
         NSString* processInfosString = [[NSString alloc] initWithData:stdoutData encoding:[NSString defaultCStringEncoding]] ;
         NSArray* processInfoStrings = [processInfosString componentsSeparatedByString:@"\n"] ;
-        /* We must now parse processInfoStrings which looks like this (with fullExecutablePath = NO):
+
+        /* We must now parse processInfoStrings which looks like the following
+         (with fullExecutablePath = NO):
+
          *     1 root           launchd
          *    10 root           kextd
          *     …
@@ -57,6 +72,7 @@ NSString* const ProcessActivityCheckerKeyExecutable = @"executable" ;
          * 53642 jk             gdb-i386-apple-darwin
          * 53651 jk             BookMacster
          *     …
+
          */
 
         processInfoDics = [[NSMutableArray alloc] init] ;
@@ -134,7 +150,7 @@ NSString* const ProcessActivityCheckerKeyExecutable = @"executable" ;
 }
 
 
-+ (pid_t)pidOfMyRunningExecutableName:(NSString*)executableName {
++ (pid_t)pidOfMyRunningProcessWithCommandName:(NSString*)executableName {
     pid_t pid = 0 ;  // not found
     NSString* targetUser = NSUserName() ;
 
