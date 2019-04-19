@@ -1,7 +1,7 @@
 //  Converted to Swift 5 by Swiftify v5.0.24084 - https://objectivec2swift.com/
 import Foundation
 
-class AgentProxy: NSObject, NSSecureCoding {
+public class AgentProxy: NSObject, NSSecureCoding {
     var text = ""
     var characterCount: Int = 0
     var timestamp: Date?

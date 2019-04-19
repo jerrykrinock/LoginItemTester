@@ -1,4 +1,7 @@
 //  Converted to Swift 5 by Swiftify v5.0.24084 - https://objectivec2swift.com/
+import Cocoa
+
+
 class AgentWorker: NSObject, NSXPCListenerDelegate, Worker {
     func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
         let interface = NSXPCInterface(with: Worker)
@@ -23,19 +26,22 @@ class AgentWorker: NSObject, NSXPCListenerDelegate, Worker {
 
     @objc func doWork(on textIn: String?, thenDo: @escaping (AgentProxy?) -> Void) {
 
+        guard let textIn = textIn else {
+            return
+        }
+
         // Pretend we are doing something substantial.
         Thread.sleep(forTimeInterval: 0.1)
 
         var answer: String
-        if (textIn?.lowercased() == "kill") {
+        if (textIn.lowercased() == "kill") {
             exit(97)
         } else {
 
             var mutant = ""
-            for i in 0..<(textIn?.count ?? 0) {
-                var aChar = unichar(textIn?[textIn?.index(textIn?.startIndex, offsetBy: UInt(i))] ?? 0)
-                let aCharString = String(characters: &aChar)
-                mutant.insert(contentsOf: aCharString, at: s.index(s.startIndex, offsetBy: 0))
+            for i in 0..<(textIn.count) {
+                let aCharString = textIn[textIn.index(textIn.startIndex, offsetBy:i)]
+                mutant.insert(aCharString, at: mutant.index(mutant.startIndex, offsetBy: 0))
             }
             answer = mutant
         }
